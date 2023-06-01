@@ -12,6 +12,8 @@ local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/daw
 
 local Win1 = DiscordLib:Window("Blap Slattles Hub")
 
+
+
 local MainTab = Win1:Server("Main", "")
 
 local AutoChann = MainTab:Channel("Auto Farms")
@@ -33,6 +35,8 @@ local PlayerTab = Win1:Server("Player", "")
 local PerksChann = PlayerTab:Channel("Perks")
 
 local AdvanceChann = PlayerTab:Channel("Advance")
+
+
 
 BadgesChann:Button("TP to Safespot (Recommended)", function()
 
@@ -65,6 +69,8 @@ pl.CFrame = location
 DiscordLib:Notification("Teleported!", "Teleported Successfully!", "Okay!")
 
 end)
+
+
 
 AntiChann:Toggle("Anti Void",false, function(noVoid)
 
