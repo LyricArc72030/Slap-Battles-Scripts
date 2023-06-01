@@ -72,6 +72,42 @@ end)
 
 
 
+BadgesChann:Toggle("Bob Farm",false, function(bool)
+
+        bobFarm = bool        
+
+        if bool == true then           
+
+            while bobFarm do               
+
+                task.wait()              
+
+                    if getGlove() == "Replica" and bobFarm and not game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.UserId, 2125950512) then
+
+                    game.ReplicatedStorage.Duplicate:FireServer()
+
+                    task.wait()                    
+
+                    tick = os.time()                    
+
+                    repeat task.wait()                       
+
+                    until os.time() - tick >= 5.1        
+
+                    end
+
+            end           
+
+            else    
+
+            task.wait(10.2)
+
+    end
+
+end)
+
+
+
 AntiChann:Toggle("Anti Void",false, function(noVoid)
 
     if noVoid == true then            
