@@ -53,6 +53,8 @@ AutoChann:Toggle("Auto Slapple Farm",false, function(bool)
                             if Instance.ClassName == "TouchTransmitter" then
 
                                 firetouchinterest(game.Players.LocalPlayer.Character.Head, Instance.Parent, 0)
+                                
+                                wait(0.1)
 
                                 firetouchinterest(game.Players.LocalPlayer.Character.Head, Instance.Parent, 1)
 
