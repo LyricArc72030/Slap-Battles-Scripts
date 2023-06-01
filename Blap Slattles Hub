@@ -38,6 +38,36 @@ local AdvanceChann = PlayerTab:Channel("Advance")
 
 
 
+AutoChann:Toggle("Auto Slapple Farm",false, function(bool)
+
+            getgenv().Slapple = bool
+
+                if bool == true then
+
+                    while getgenv().Slapple do
+
+                        wait(.001)
+
+                        for Index, Instance in next, workspace.Arena.island5.Slapples:GetDescendants() do
+
+                            if Instance.ClassName == "TouchTransmitter" then
+
+                                firetouchinterest(game.Players.LocalPlayer.Character.Head, Instance.Parent, 0)
+
+                                firetouchinterest(game.Players.LocalPlayer.Character.Head, Instance.Parent, 1)
+
+                            end
+
+                        end
+
+                    end
+
+                end
+
+end)
+
+
+
 BadgesChann:Button("TP to Safespot (Recommended)", function()
 
     local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
