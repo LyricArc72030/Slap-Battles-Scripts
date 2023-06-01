@@ -12,7 +12,7 @@ local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/daw
 
 local Win1 = DiscordLib:Window("Blap Slattles Hub")
 
-local MainTab = Win1:Server("Main", "Main")
+local MainTab = Win1:Server("Main", "")
 
 local AutoChann = MainTab:Channel("Auto Farms")
 
