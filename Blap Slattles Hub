@@ -308,7 +308,20 @@ CombatChann:Toggle("Anti Void",false, function(noVoid)
 
                     if v.CanCollide == true then
 
-                        v.CanCollide = false   
+                        v.CanCollide = false        
+
+                        v.Transparency = 1
+
+                    end
+
+                end    
+
+            end
+
+        end
+
+    end)
+
                         
                         
 CombatChann:Toggle("Anti Ragdoll",false, function(bool)
