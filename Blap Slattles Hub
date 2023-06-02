@@ -150,9 +150,4 @@ CombatChann:Toggle("Anti Ragdoll",false, function(bool)
     end
 end)                        
                         
-                        
-                        
 
-                        
- 
- 
