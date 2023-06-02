@@ -38,6 +38,92 @@ local AdvanceChann = PlayerTab:Channel("Advance")
 
 
 
+AutoChann:Toggle("Slap Farm",false, function(bool)
+
+            allFarming = bool
+
+                if bool == true then                    
+
+                    if setfpscap then                       
+
+                        setfpscap(50)                   
+
+                    end                   
+
+                    workspace.DEATHBARRIER.CanTouch = false
+
+                    workspace.DEATHBARRIER2.CanTouch = false
+
+                    workspace.dedBarrier.CanTouch = false
+
+                    task.wait()
+
+                    while allFarming do
+
+                        task.wait()                       
+
+                        pcall(function()                     
+
+                        for Index, Human in next, game.Players:GetPlayers() do                        
+
+                            if Human ~= game.Players.LocalPlayer and Human.Character and not Human.Character:FindFirstChild("isParticipating") and Human.Character:FindFirstChild("Torso") and Human.Character:FindFirstChild("Head") and Human.Character:FindFirstChild("entered") and Human.Character.Head:FindFirstChild("UnoReverseCard") == nil and Human.Character:FindFirstChild("rock") == nil and Human.Character.Ragdolled.Value == false then               
+
+                                if game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then                               
+
+                                task.wait(.1)                
+
+                                    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = Human.Character:FindFirstChild("Right Leg").CFrame * CFrame.new(6,-5,6)                           
+
+                                        task.wait()          
+
+                                    game.Players.LocalPlayer.Character:WaitForChild("Humanoid").PlatformStand = true                                  
+
+                                        wait(.25)           
+
+                                    shared.gloveHits[getGlove()]:FireServer(Human.Character:FindFirstChild("Torso"))                                      
+
+                                        wait(.25)            
+
+                                    end
+
+                                end
+
+                        end                        
+
+                        end)                       
+
+                        end                  
+
+                    
+
+                    else                  
+
+                    if setfpscap then                  
+
+                    setfpscap(1269)                 
+
+                    end                   
+
+                    workspace.DEATHBARRIER.CanTouch = true
+
+                    workspace.DEATHBARRIER2.CanTouch = true
+
+                    workspace.dedBarrier.CanTouch = true                  
+
+                    if game.Players.LocalPlayer.Character.Humanoid.PlatformStand == true then                     
+
+                        task.wait(3)                     
+
+                        game.Players.LocalPlayer.Character.Humanoid.PlatformStand = false                      
+
+                    end
+
+          end
+
+end)
+
+
+
 AutoChann:Toggle("Auto Slapple Farm",false, function(bool)
 
             getgenv().Slapple = bool
@@ -140,7 +226,57 @@ end)
 
 
 
-AntiChann:Toggle("Anti Void",false, function(noVoid)
+CombatChann:Toggle("Slap Aura",false, function(bool)
+
+        getgenv().SlapAura = bool
+
+            if bool == true then
+
+                while getgenv().SlapAura do
+
+                    task.wait(.005)                        
+
+                        pcall(function()                     
+
+                        for Index, Player in next, game.Players:GetPlayers() do                          
+
+                            if Player ~= game.Players.LocalPlayer and Player.Character and Player.Character:FindFirstChild("entered") then              
+
+                                if Player.Character:FindFirstChild("Head") then                
+
+                                if Player.Character.Head:FindFirstChild("UnoReverseCard") == nil and Player.Character:FindFirstChild("rock") == nil then  
+
+                                    if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+
+                                    local Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - Player.Character.HumanoidRootPart.Position).Magnitude     
+
+                                    if 25 >= Magnitude then  
+
+                                        shared.gloveHits[getGlove()]:FireServer(Player.Character:WaitForChild("Head"))                                   
+
+                                end                          
+
+                                    end
+
+                            end                  
+
+                                end
+
+                        end                  
+
+                        end
+
+                    end)
+
+                end         
+
+        end
+
+end)
+
+
+
+CombatChann:Toggle("Anti Void",false, function(noVoid)
 
     if noVoid == true then            
 
@@ -172,16 +308,50 @@ AntiChann:Toggle("Anti Void",false, function(noVoid)
 
                     if v.CanCollide == true then
 
-                        v.CanCollide = false        
+                        v.CanCollide = false   
+                        
+                        
+CombatChann:Toggle("Anti Ragdoll",false, function(bool)
 
-                        v.Transparency = 1
+        antiRagdoll = bool     
 
-                    end
+        if bool == true then         
 
-                end    
+        game.Players.LocalPlayer.Character.Humanoid.Health = 0      
 
-            end
+        task.wait()     
 
-        end
+        game.Players.LocalPlayer.CharacterAdded:Connect(function()
 
-    end)
+            local Character = game.Workspace[game.Players.LocalPlayer.Name]           
+
+            task.wait()         
+
+            Character:WaitForChild("Ragdolled").Changed:Connect(function()              
+
+                if Character:WaitForChild("Ragdolled").Value == true and antiRagdoll == true then                  
+
+                    repeat task.wait()                  
+
+                    Character.Torso.Anchored = true         
+
+                    until Character:FindFirstChild("Torso") == nil or Character:WaitForChild("Ragdolled").Value == false 
+
+                    Character.Torso.Anchored = false
+
+                end              
+
+            end)          
+
+        end)       
+
+    end
+
+end)                        
+                        
+                        
+                        
+
+                        
+ 
+ 
