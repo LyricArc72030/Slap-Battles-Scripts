@@ -5,22 +5,8 @@
     task.wait()
     if game.PlaceId == 6403373529 or game.PlaceId == 11520107397 or game.PlaceId == 9015014224 then
     task.wait()
-local bypass;
-    bypass = hookmetamethod(game, "__namecall", function(method, ...) 
-        if getnamecallmethod() == "FireServer" and method == game.ReplicatedStorage.Ban then
-            return
-        elseif getnamecallmethod() == "FireServer" and method == game.ReplicatedStorage.AdminGUI then
-            return
-        elseif getnamecallmethod() == "FireServer" and method == game.ReplicatedStorage.WalkSpeedChanged then
-            return
-        end
-        return bypass(method, ...)
-    end)    
-    task.wait()    
-    if setfpscap then        
-        setfpscap(12569)        
-end
-
+    end
+   
    local Gloves = loadstring(game:HttpGet("https://raw.githubusercontent.com/LyricArc72030/LOL/main/Gloves.lua"))()
 
    local Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/LyricArc72030/LOL/main/Functions.lua"))()
