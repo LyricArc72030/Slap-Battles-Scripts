@@ -226,7 +226,7 @@ end)
 
 
 
-CombatChann:Toggle("Slap Aura",false, function(bool)
+CombatChann:Toggle("Slap Aura (Enable with Slap Farm!)",false, function(bool)
 
         getgenv().SlapAura = bool
 
