@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LyricArc72030/Slap-Battles-Scripts/main/Blap-Slattles-Hub.lua"))()
