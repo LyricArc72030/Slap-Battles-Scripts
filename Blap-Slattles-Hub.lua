@@ -34,7 +34,7 @@ local function getGlove()
 end
 
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/LyricArc72030/Main-Script/main/Main2.lua"))()
-local Window = OrionLib:MakeWindow({Name = "Blap Slattles Hub", HidePremium = false, IntroEnabled = true, IntroText = "Blap Slattles Hub"})
+local Window = OrionLib:MakeWindow({Name = "Blap Slattles Hub", HidePremium = false, IntroEnabled = true, IntroText = "Slap Battles Script"})
 
 OrionLib:MakeNotification({
 	Name = "Loading Script...",
