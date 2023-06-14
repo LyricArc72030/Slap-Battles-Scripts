@@ -5,7 +5,7 @@ end
 local Success, Response = pcall(function()
        wait(0.2)
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Game Detected! Loading Script...";
+    Title = "Game Detected! Loading...";
     Text = "If the Script doesn't load, try to Execute it again!";
     Duration = 6;
 })
@@ -36,7 +36,7 @@ Player = game.Players.LocalPlayer.Character.Name
 local plr = game.Players.LocalPlayer
 
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/LyricArc72030/Main-Script/main/Main2.lua"))()
-local Window = OrionLib:MakeWindow({Name = "Rlap Soyale Hub", HidePremium = false, IntroEnabled = true, IntroText = "Slap Royale Script"})
+local Window = OrionLib:MakeWindow({Name = "Rlap Soyale Hub (Beta)", HidePremium = false, IntroEnabled = true, IntroText = "Slap Royale Script"})
 
     local namecall
     namecall = hookmetamethod(game, "__namecall", function(self, ...)
