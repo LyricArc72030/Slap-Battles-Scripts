@@ -22,9 +22,10 @@ if game.CoreGui:FindFirstChild("CombatTab", 1) then
 		
   else
 	_G.settingsTable = {
-    GrabItems = false,
+
 		Speed = 20.554494,
-		Jump = 50.554494, 
+		Jump = 50.554494,
+				
 }
 
 local Time = tick()
@@ -203,39 +204,6 @@ Item:AddButton({
     end
 })
 
-Item:AddToggle({
-	Name = "Auto Equip Items",
-	Default = false,
-	Callback = function(Grab)
-      if Grab == true then
-              OrionLib:MakeNotification({
-	Name = "Toggle Enabled!",
-	Content = "Auto Equip Items Enabled!",
-	Image = "rbxassetid://4483345998",
-	Time = 6
-})
-
-       _G.settingsTable.GrabItems = Grab    
-
-               while _G.settingsTable.GrabItems do
-                wait(.1)
-                if workspace[game.Players.LocalPlayer.Name].inMatch.Value == true then
-                    wait(0.1)
-            local lp = game.Players.LocalPlayer
-            for i, v in ipairs(game.Workspace:GetDescendants()) do
-
-                if v:IsA("TouchTransmitter") and v.Parent.Name == "Handle" then
-                    lp.Character.Humanoid:EquipTool(v.Parent.Parent)
-                end
-                
-                
-                end
-                end
-            end
-            end
-	end    
-})
-      
 Item:AddButton({
 	Name = "Bomb Bus (For Trolling!)",
 	Callback = function()
