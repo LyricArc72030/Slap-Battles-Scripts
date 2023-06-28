@@ -20,7 +20,6 @@ local bypass;
     if setfpscap then     
         setfpscap(12569)       
     end
-  end
 
    local Gloves = loadstring(game:HttpGet("https://raw.githubusercontent.com/LyricArc72030/LOL/main/Gloves.lua"))()
 
